@@ -57,3 +57,12 @@ function montaQuerySelect3(tabela, ...colunas) {
 console.log(montaQuerySelect3('usuarios'));
 console.log(montaQuerySelect3('usuarios', 'idade', 'sexo', 'nome', 'endereco'));
 console.log(montaQuerySelect3('usuarios', 'nome'));
+
+function montaQuerySelect4(tabela, ...colunas) {
+    let cols = colunas.length > 0 ? colunas.join(', ') : '*';
+    return `SELECT ${cols} FROM ${tabela}`;
+}
+
+console.log(montaQuerySelect4('usuarios'));
+console.log(montaQuerySelect4('usuarios', 'idade', 'sexo', 'nome', 'endereco'));
+console.log(montaQuerySelect4('usuarios', 'nome'));
